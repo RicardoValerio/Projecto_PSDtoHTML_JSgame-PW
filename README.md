@@ -1,6 +1,6 @@
 Meu contributo para o Projecto final para a disciplina de - Programação Web - da Universidade Europeia
 
-Grupo Constituido por:
+Grupo Constituído por:
 
 - João Faria Nº 500 30 485
 - Ricardo Valério - Nº 500 29 995

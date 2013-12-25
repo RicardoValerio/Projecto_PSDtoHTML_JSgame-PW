@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Outra Page</title>
+	<title>Destinos</title>
 	<link href='http://fonts.googleapis.com/css?family=Strait' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="styles/style.css">
 </head>
@@ -32,20 +32,20 @@
 		</div>
 
 		<div class="content">
-			<div style="border:1px solid #C0C0C0; border-radius:3px; float: left; width: 183px; padding: 10px;" class="leftSide">
+			<div class="leftSide">
 				<h2>Roteiros Turísticos</h2>
 				<hr>
 				<span class="leftTitle">Procura</span>
 				<form action="#" method="POST">
-				<input style="height: 23px; border-radius: 5px;" type="text" name="procura" id="procura" placeholder="procura..."> <br>
+				<input type="text" name="procura" id="procura" placeholder="procura..."> <br>
 				</form>
 				<br>
 				<hr>
 				<span class="leftTitle">Comentários</span>
 				<br>
-				<img style="position: relative; left: -75px; top: 20px;" src="images/quote.jpg" alt="this"> <p class="coments">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, velit, debitis delectus mollitia dicta. <br> <span class="dateComent">14/07/2013</span></p> 
-				<img style="position: relative; left: -75px; top: 20px;" src="images/quote.jpg" alt="this"> <p class="coments">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, velit, debitis delectus mollitia dicta. <br> <span class="dateComent">12/07/2013</span></p> 
-				<img style="position: relative; left: -75px; top: 20px;" src="images/quote.jpg" alt="this"> <p class="coments">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, velit, debitis delectus mollitia dicta. <br> <span class="dateComent">05/06/2013</span></p> <br>
+				<img class="imgComents" src="images/quote.jpg" alt="this"> <p class="coments">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, velit, debitis delectus mollitia dicta. <br> <span class="dateComent">14/07/2013</span></p> 
+				<img class="imgComents" src="images/quote.jpg" alt="this"> <p class="coments">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, velit, debitis delectus mollitia dicta. <br> <span class="dateComent">12/07/2013</span></p> 
+				<img class="imgComents" src="images/quote.jpg" alt="this"> <p class="coments">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, velit, debitis delectus mollitia dicta. <br> <span class="dateComent">05/06/2013</span></p> <br>
 				<hr>
 				<span class="leftTitle">Facebook</span>
 				<p class="coments">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, ipsa, soluta atque quibusdam dolorem cupiditate dolore!</p>
@@ -58,12 +58,12 @@
 				<img src="images/fullStar.jpg" alt="this">
 				<img src="images/halfStar.jpg" alt="this">
 				<img src="images/voidStar.jpg" alt="this">
-				<p style="text-align: left; margin-bottom: 5.3px;">3,5 Médio</p> 
-				<p style="text-align: left; margin-top: 0;">10,456 Votações</p> 
+				<p id="classification">3,5 Médio</p> 
+				<p id="votes">10,456 Votações</p> 
 			</div>
-			<div style=" float: right; width: 588px;" class="rightSide">
-				<h3 style="margin-bottom: 0; text-transform: uppercase;">Algarve</h3>
-				<p style="margin-top: 0; color:gray; text-transform: uppercase; font-size: 13px;">saúde e bem estar</p>
+			<div class="rightSide">
+				<h3 id="titleRightSide">Algarve</h3>
+				<p id="subtitleRightSide">saúde e bem estar</p>
 				<img src="images/algarve.jpg" alt="this">
 				<ul>
 					<li><a href="#">Sobre</a></li>
@@ -73,17 +73,17 @@
 				</ul>
 				<p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, iste, optio alias sint minima obcaecati saepe eos commodi possimus ea excepturi nemo qui harum iusto dolor asperiores labore. Possimus, praesentium.</p>
 
-				<h3 style="margin-bottom: 0; text-align: left; margin-left: 10px;">1º DIA</h3>
-				<p style="margin-top: 0; text-align: left; margin-left: 12px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, deserunt, adipisci voluptates iste laboriosam quasi nostrum aliquam quas id eius laudantium molestias assumenda similique distinctio repellat rem voluptatem alias tempore, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, esse, possimus, sapiente itaque doloremque fugit laboriosam adipisci officiis omnis modi eligendi odit nulla unde facere quas quaerat saepe. Quis, ea.
+				<h3 class="numberOfDays">1º DIA</h3>
+				<p class="descriptionDays">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, deserunt, adipisci voluptates iste laboriosam quasi nostrum aliquam quas id eius laudantium molestias assumenda similique distinctio repellat rem voluptatem alias tempore, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, esse, possimus, sapiente itaque doloremque fugit laboriosam adipisci officiis omnis modi eligendi odit nulla unde facere quas quaerat saepe. Quis, ea.
 				</p>
 
-				<h3 style="margin-bottom: 0; text-align: left; margin-left: 10px;">2º DIA</h3>
-				<p style="margin-top: 0; text-align: left; margin-left: 12px;">
+				<h3 class="numberOfDays">2º DIA</h3>
+				<p class="descriptionDays">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, adipisci delectus maiores aut minus maxime quibusdam placeat consequuntur quam error quos tempora accusamus expedita excepturi voluptates ab perferendis ea. Facere, eos quas totam. Veniam, consectetur, excepturi, aperiam possimus incidunt quod illum minima cumque debitis perferendis reprehenderit delectus aut eaque quia eligendi aliquam temporibus at velit vel mollitia quisquam. Magnam, distinctio, earum voluptatibus architecto dolore laudantium perspiciatis omnis quis reiciendis unde quia delectus odit corporis sapiente quae non ipsam fuga ad ratione eos nobis tempore perferendis inventore dolorem atque quo blanditiis recusandae quaerat vitae dolores debitis cumque nihil modi. Quia, qui.
 				</p>
 
-				<h3 style="margin-bottom: 0; text-align: left; margin-left: 10px;">3º DIA</h3>
-				<p style="margin-top: 0; text-align: left; margin-left: 12px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, deserunt, adipisci voluptates iste laboriosam quasi nostrum aliquam quas id eius laudantium molestias assumenda similique distinctio Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, doloremque, vero, ab nostrum fugiat quo amet illo dolore alias maiores ratione unde odit explicabo est sunt voluptatibus sed enim molestias. repellat rem voluptatem alias tempore!
+				<h3 class="numberOfDays">3º DIA</h3>
+				<p class="descriptionDays">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, deserunt, adipisci voluptates iste laboriosam quasi nostrum aliquam quas id eius laudantium molestias assumenda similique distinctio Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, doloremque, vero, ab nostrum fugiat quo amet illo dolore alias maiores ratione unde odit explicabo est sunt voluptatibus sed enim molestias. repellat rem voluptatem alias tempore!
 				</p>
 
 

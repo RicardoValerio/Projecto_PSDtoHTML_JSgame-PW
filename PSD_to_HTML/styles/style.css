@@ -194,6 +194,68 @@ span#conditions{
 	text-transform: uppercase;
 }
 
+.leftSide{
+	border:1px solid #C0C0C0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	float: left;
+	width: 183px;
+	padding: 10px;
+}
+
+.leftSide form input[type="text"]{
+	height: 23px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.imgComents{
+	position: relative;
+	left: -75px;
+	top: 20px;
+}
+
+#classification{
+	text-align: left;
+	margin-bottom: 5.3px;
+}
+
+#votes{
+	text-align: left;
+	margin-top: 0;
+}
+
+.rightSide{
+	float: right;
+	width: 588px;
+}
+
+#titleRightSide{
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+
+#subtitleRightSide{
+	margin-top: 0;
+	color:gray;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+.numberOfDays{
+	margin-bottom: 0;
+	text-align: left;
+	margin-left: 10px;
+}
+
+.descriptionDays{
+	margin-top: 0;
+	text-align: left;
+	margin-left: 12px;
+}
+
 .coments{
 	text-align: left;
 	margin-left: 15px;
