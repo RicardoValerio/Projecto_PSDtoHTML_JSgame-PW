@@ -1,0 +1,208 @@
+body{
+	background-color: #181717;
+	font-family: 'Strait', Geneva, sans-serif;
+
+}
+
+.container{
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 5px;
+	border: 2px solid grey;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 2px;
+	-moz-box-shadow: 0 0 2px 2px #888;
+	-webkit-box-shadow: 0 0 2px 2px#888;
+	box-shadow: 0 0 2px 2px #888;
+	background-color: white;
+}
+
+.outerHeader{
+	background-color: black;
+	height: 100px;
+}
+
+#loginRegister{
+	float: right;
+}
+
+#loginRegister a:nth-child(2) {
+	margin-left: 18px;
+	margin-right: 11px;
+}
+
+#loginRegister a:link,
+#loginRegister a:visited{
+	color: gray;
+	text-decoration: none;
+}
+
+#loginRegister a:hover{
+	text-decoration: underline;
+}
+
+
+.header{
+	width: 800px;
+	height: 64px;
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+	padding-top: 15px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid gray;
+}
+
+ .header h1{
+	display: inline;
+	position: relative;
+	top: 17px;
+}
+
+.header ul{
+	float: right;
+	position: relative;
+	top: -20px;
+}
+
+.header ul li, .rightSide ul li{
+	display: inline;
+	padding: 4px;
+	margin-right: 5px;
+}
+
+.rightSide ul li a{
+	text-transform: uppercase;
+}
+
+.rightSide ul li a:link,
+.rightSide ul li a:visited{
+	color: #273a43;
+	font-weight: bolder;
+	text-decoration: none;
+}
+
+.rightSide ul li a:hover{
+	text-decoration: underline;
+}
+
+.header ul li a:link, 
+.header ul li a:visited{
+	color: white;
+	text-decoration: none;
+}
+
+.header ul li a:hover{
+	text-decoration: underline;
+}
+
+#slide2{
+	margin-top: -5px;
+	margin-bottom: 40px;
+}
+
+#placeIcon{
+	position: relative;
+	top: -33px;
+}
+
+.titleSection{
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.content{
+	width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.content:second-child{
+	text-transform: uppercase;
+}
+
+span#conditions{
+	font-weight: bold;
+}
+
+.footer{
+	width: 960px;
+	background-color: #273a43;
+	padding-top: 20px;
+	margin-top: 80px;
+	color:white;
+	font-size: 13px;
+}
+
+
+.innerFooter{
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 10px;
+	background-color: #273a43;
+	margin-left: 100px;
+}
+.innerFooter div{
+	width: 150px;
+	float: left;
+	margin-right: 50px;
+}
+
+.secondbox span{
+	position: relative;
+	top: -11px;
+}
+
+.lastBox form input[type="text"]{
+	width: 103px;
+}
+
+.lastBox form input[type="submit"]{
+	margin-left: -4px;
+	height: 22px;
+	background-color: #71b6d1;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	color: white;
+}
+
+
+.copyRight{
+	background-color: #172227;
+	height: 43px;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+.copyRight p {
+	display: inline;
+	margin-left: 16px;
+}
+
+.copyRight span{
+	float:right;
+	margin-right: 96px;
+}
+
+.leftTitle{
+	position: relative;	
+	top: -19px;
+	background-color: white;
+	padding: 11px;
+	text-transform: uppercase;
+}
+
+.coments{
+	text-align: left;
+	margin-left: 15px;
+}
+
+.dateComent{
+	text-decoration: underline;
+}
+
+.clearfix{
+	clear: both;
+}

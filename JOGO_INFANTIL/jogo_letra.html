@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jogo da Letra</title>
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+
+<style>
+	body{
+		background: url(imagens/bg.gif);
+		background-size: cover;
+	}
+	
+	table{
+		background-color: #fff;
+	}
+
+	table th{
+		width: 33%;
+	}
+	
+	#letraInserida, #letraGerada{
+		font-family: 'Press Start 2P', cursive;
+	}
+
+</style>
+</head>
+<body onload="gerarLetra();">
+
+<script>
+	var musicas_array = [
+							[
+								"musicas/mario0.mp3",
+								"musicas/mario0.ogg"
+							],
+							
+							[
+								"musicas/mario1.mp3",
+								"musicas/mario1.ogg"
+							],
+							
+							[
+								"musicas/mario2.mp3",
+								"musicas/mario2.ogg"
+							],
+							
+							[
+								"musicas/mario3.mp3",
+								"musicas/mario3.ogg"
+							],
+							
+							[
+								"musicas/mario4.mp3",
+								"musicas/mario4.ogg"
+							],
+
+							[
+								"musicas/nyan.mp3",
+								"musicas/nyan.ogg"
+							],
+							
+							[
+								"musicas/pb.mp3",
+								"musicas/pb.ogg"
+							]
+						];
+
+
+// gerar numero aleatorio de 1 a 7 e colocar no src da audio tag as musicas desse indice que saiu
+var indice_musica = Math.floor(Math.random() * 7) ;
+
+console.log("Array de musicas: " + musicas_array);
+console.log("Numero aleatorio: " + indice_musica);
+console.log("Musica Mp3: " + musicas_array[indice_musica][0]);
+console.log("Musica Ogg: " + musicas_array[indice_musica][1]);
+
+</script>
+
+<audio id="meu_audio" autoplay loop>  
+  <script>
+  document.write('<source id="formato_mp3" src="'+ musicas_array[indice_musica][0] +'" type="audio/mpeg">');
+  document.write('<source id="formato_ogg" src="'+ musicas_array[indice_musica][1] +'" type="audio/ogg">');
+  </script>
+  <source id="formato_mp3" src="" type="audio/mpeg">
+  <source id="formato_ogg" src="" type="audio/ogg">
+ Your browser does not support the audio element.
+</audio>
+
+
+<div id="conteudoPrincipal">
+	
+	<div style="width: 100%; font-family: 'Press Start 2P', cursive; font-size: 2em; ">
+		<div style="width:33%; float:left; color:white;">
+			<img style="float:left;" src="imagens/cat_lives.png" alt="lifes">
+			<span style="position: absolute; margin-top: 55px; color:orange; background-color: black;">X <span style="color:#860B79;" id="numero_vidas">3</span></span>
+		</div>
+		<div style="width:33%; float:left; text-align: center; margin-top: 30px; color:yellow; background-color: black;"> TIME 00:<span id="time_left">60</span>
+		</div>
+	
+		<div style="width:33%; float:left; text-align: right; color:white;">
+	
+	
+				<p><span style="color:#28B52B; background-color: black;">Certas:</span> 
+					<span style="color:#317CEB; background-color: black; " id="teclas_certas">0</span>
+				</p>
+			
+			
+				<p><span style="color:#E83838; background-color: black;">Erradas:</span>
+					<span style="color:#317CEB; background-color: black; " id="teclas_erradas">0</span>
+				</p>
+			
+		</div>
+	
+	</div>
+	
+	
+	
+	
+	<div style="clear: both; width:600px; margin:0 auto; border-radius:10px; margin-top: 50px;" id="content">
+		
+		<div style="width:200px; height:200px; background: url(imagens/gc.jpg); text-align: left;
+	text-indent: 13px; border:3px solid #514EED; border-radius:10px; font-size: 43px; margin:0 auto; margin-top: 30px; margin-bottom: 30px; line-height: 170px;" id="letraGerada">
+		</div>
+		
+		<div style="width:200px; height:200px; border:3px solid white; border-radius:10px; text-align:center; font-size: 53px; margin:0 auto; margin-top: 30px; margin-bottom: 30px; line-height: 200px; background-color: #2BB137;" id="letraInserida">
+			<img style="border-radius:100px; margin-top: 24px;" src="imagens/cat.gif" alt="cat typing keyboard." width="200" height:"200">
+		</div>
+	
+	</div>
+	
+</div> <!-- FIM DO conteudoPrincipal -->
+
+<div id="resultados" style="text-align: center; margin-top: 60px; color: white; display: none;"> 
+	<img id="imagem_resultado" src="" alt="resultados">
+	<h2 style="font-family: 'Press Start 2P', cursive;" id="percentagem"></h2>
+	<br>
+	<a href="?">Restart Game!</a>
+</div>
+
+<script>
+
+/**********************************************
+*				VARIÁVEIS GLOBAIS
+***********************************************/
+// pela própria linguagem, o javascript já inicializa uma variavel com o valor zero caso não lhe seja atribuido qualquer valor, no entanto quis ser explícito e inicei os contadores com o valor zero;
+var contador_erradas = contador_certas = 0;
+
+
+/**********************************************
+*				GERAR LETRA
+***********************************************/
+
+	// random de 65 a 90
+	function gerarLetra() {
+
+		// gerar numero aleatorio entre 65 e 90 - numeros correspondentes às letras pela tabela ASCII
+		numeroAleatorio = Math.floor(Math.random() * (90 - 65 + 1)) + 65; // variável tem necessariamente de ser global (sem palavra var)
+    	document.getElementById('letraGerada').innerHTML = String.fromCharCode(numeroAleatorio);
+
+		// colocar no body a verificação de letra no evento onkeydown 
+		document.getElementsByTagName('body')[0].setAttribute('onkeydown',"verificarLetra(event);");
+	}
+
+
+/**********************************************
+*			VERIFICAR LETRA INSERIDA
+***********************************************/
+	
+		function verificarLetra(event) {
+
+			var letraInserida_pelo_utilizador = event.keyCode;
+
+			if(event.keyCode == numeroAleatorio){
+
+				contador_certas++;
+				document.getElementById('teclas_certas').innerHTML = contador_certas;
+
+				document.getElementsByTagName('body')[0].setAttribute('onkeydown',' ');
+    			document.getElementById('letraInserida').innerHTML = String.fromCharCode(letraInserida_pelo_utilizador);
+				document.getElementById('letraInserida').style.backgroundColor = '#2BB137';
+				
+				// fazer o som "yeaaaaahh =D"
+				
+				// chama função que irá gerar uma nova letra, mas só depois de 1 segundo e meio
+				setTimeout(
+					function() {
+						gerarLetra();
+						document.getElementById('letraInserida').innerHTML = '<img style="border-radius:100px; margin-top: 24px;" src="imagens/cat.gif" alt="cat typing keyboard." width="200" height:"200">';
+				},1500);
+
+			}else{
+				document.getElementById('teclas_erradas').innerHTML = ++contador_erradas;
+
+    			document.getElementById('letraInserida').innerHTML = String.fromCharCode(letraInserida_pelo_utilizador);
+				document.getElementById('letraInserida').style.backgroundColor = '#E14747';
+			}
+		}
+
+/**********************************************
+*			TIMER 
+***********************************************/
+setInterval(function () {
+   
+   	var segundos = parseInt(document.getElementById('time_left').innerHTML);
+   	document.getElementById('time_left').innerHTML = --segundos;
+
+}, 1000);
+
+
+/**********************************************
+*		DECREMENTADOR DO NUMERO DE VIDAS 
+***********************************************/
+var numero_erradas = 0 ;
+// console.log("O numero de erradas está em: " + numero_erradas);
+
+setInterval(function () {
+
+	if ( (parseInt(document.getElementById('teclas_erradas').innerHTML) % 2 == 0) && 
+		(parseInt(document.getElementById('teclas_erradas').innerHTML) != numero_erradas) ) {
+	numero_erradas = parseInt(document.getElementById('teclas_erradas').innerHTML);	
+	document.getElementById('numero_vidas').innerHTML = parseInt(document.getElementById('numero_vidas').innerHTML)-1;
+	}
+   
+}, 500);
+
+
+
+/**********************************************
+*		VERIFICADOR DE TEMPO E DE VIDAS 
+***********************************************/
+
+setInterval(function () {
+   
+   if (document.getElementById('time_left').innerHTML == '0' || document.getElementById('numero_vidas').innerHTML == '0') {
+
+   	// realizar cálculos e redireccionar para a página certa...
+   		var percentagemFinal = parseInt(document.getElementById('teclas_certas').innerHTML) / 
+   			( parseInt(document.getElementById('teclas_certas').innerHTML) + (parseInt(document.getElementById('teclas_erradas').innerHTML)));
+   		percentagemFinal*=100;
+
+
+   		if (percentagemFinal >= 50) {
+   			// parabéns
+   			document.getElementById('conteudoPrincipal').remove();
+			document.body.style.background = "black";	
+   			
+			document.getElementById('resultados').style.display = "block";	
+			document.getElementById('imagem_resultado').src = "http://nostalgiaisgnarly.files.wordpress.com/2013/07/gameboy-winner.gif";
+			document.getElementById('percentagem').innerHTML = Math.round(percentagemFinal) + "% of Mastery";
+			
+   		}else{
+   			// gameOver
+   			document.getElementById('conteudoPrincipal').remove();
+			document.body.style.background = "black";	
+   			
+			document.getElementById('resultados').style.display = "block";	
+			document.getElementById('imagem_resultado').src = "http://s3.amazonaws.com/rapgenius/filepicker%2F5eCoGHrVSCiyT7VqeKBw_game_over.jpg";
+			document.getElementById('percentagem').innerHTML =  Math.round(percentagemFinal) + "% of Mastery";
+
+   		}
+
+
+	}	
+
+}, 200);
+
+</script>
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
